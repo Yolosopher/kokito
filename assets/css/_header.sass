@@ -1,0 +1,79 @@
+header
+    height: 130px
+    margin-bottom: 87px
+.header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 130px
+    position: relative
+    &__tel
+        display: flex
+        width: max-content
+        align-items: center
+        color: $black
+        font-family: firagosemibold
+        @include font(16px, 19.2px)
+        @media screen and ( max-width: 700px )
+            position: absolute
+            z-index: 1
+            top: 105%
+            left: 20px
+        &::before
+            display: inline-block
+            content: url(../img/mobile.svg)
+            margin-right: 15px
+            height: 24px
+    &__logo
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        z-index: 1
+        &__imgbox
+            position: relative
+            background: rgba(#fff, .2)
+            box-shadow: 0px 0px 30px #C5CAD3
+            border-radius: 16px
+            width: 138px
+            height: 104px
+            display: flex
+            justify-content: center
+            align-items: center
+            img
+                position: absolute
+                left: 50%
+                top: 50%
+                transform: translate(-50%, -50%)
+                width: 114px
+                height: 80px
+                top: 50%
+                z-index: 2
+            &::after
+                content: url(../img/logobg.png)
+                position: absolute
+                top: -30px
+                right: -10px
+                z-index: 1
+                // background-size: contain
+                // background: url(../img/logobg.png)
+
+    &__lang
+        display: flex
+        align-items: center
+        height: 24px
+        @media screen and ( max-width: 700px )
+            position: absolute
+            z-index: 1
+            top: 105%
+            right: 20px
+        a
+            font-family: firagobold
+            @include font(14px, 16.8px)
+            
+            color: $black
+            &:not(:last-child)
+                margin-right: 14px
+            &.active
+                color: $red
+

@@ -1,0 +1,108 @@
+// colors
+$bg: #E7EDFB
+$black: #231F20
+$blue: #515F78
+$light: #FFFDD4
+$red: #D43924
+$decopink: #F2DDDF
+    
+$width380: 380px
+$width450: 450px
+$width700: 700px
+$width769: 769px
+$width1025: 1025px
+$width1279: 1279px
+$width1441: 1441px
+$width1900: 1900px
+$max-width: 1643px // 1006px
+$containerPaddingIpad: 20px
+$containerPadding: 30px
+$padL: calc( ((100vw - 10px) - 1697px) / 2)
+
+    
+
+/* Chrome, Safari, Edge, Opera */
+// input::-webkit-outer-spin-button,
+// input::-webkit-inner-spin-button 
+//     -webkit-appearance: none !important
+//     margin: 0 !important
+
+
+/* Firefox */
+// input[type=number] 
+    // -moz-appearance: textfield !important
+
+
+@mixin plus380()
+    @media screen and (min-width: $width380)
+        @content
+
+@mixin plus450()
+    @media screen and (min-width: $width450)
+        @content
+
+@mixin plus700()
+    @media screen and (min-width: $width700)
+        @content
+
+@mixin plus769()
+    @media screen and (min-width: $width769)
+        @content
+
+@mixin plus1025()
+    @media screen and (min-width: $width1025)
+        @content
+
+@mixin plus1441()
+    @media screen and (min-width: $width1441)
+        @content
+
+@mixin plus1900()
+    @media screen and (min-width: $width1900)
+        @content
+
+@mixin sizePlus($width)
+    @media screen and (min-width: $width)
+        @content
+
+@mixin upperCase()
+    text-transform: uppercase
+    font-feature-settings: "case" on
+
+        
+
+@mixin blur($px)
+    -webkit-filter: blur($px)
+    -moz-filter: blur($px)
+    -o-filter: blur($px)
+    -ms-filter: blur($px)
+    filter: blur($px)
+
+@mixin maxcolumn($num)
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-line-clamp: $num /* number of lines to show */
+    -webkit-box-orient: vertical
+
+@mixin font($size, $lnh)
+    font-size: $size
+    line-height: $lnh
+
+// .container
+//     padding: 0 20px
+//     @include plus1900()
+//         padding: 0 135px
+
+// .input-div
+//     border: 1px solid transparet
+//     border-radius: 12px
+//     display: flex
+//     input
+//         // display: flex
+//         width: 100%
+//         height: 100%
+//     &.invalid.invalid-shown
+//         border-color: $darkred
+
+    
