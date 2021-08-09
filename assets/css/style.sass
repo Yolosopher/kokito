@@ -26,32 +26,31 @@ body
         width: 100%
         margin-bottom: 40px
         grid-auto-rows: 415px
+        grid-auto-rows: 354px
         @include plus700()
-            grid-auto-rows: 315px
             grid-template-columns: repeat(3, 1fr)
 
         @include plus1025()
             margin-bottom: 130px
             grid-template-columns: repeat(4, 1fr)
         &__li
-            display: flex
-            flex-direction: column
+            display: block
             padding: 20px
             border-radius: 30px
             background: linear-gradient(151.94deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 100.95%)
             // width: 
             height: 415px
             cursor: pointer
-            @include plus700()
-                height: 315px
+            // @include plus700()
+            height: 354px
             &__imgbox
                 border-radius: 30px
                 overflow: hidden
                 width: 100%
-                height: 242px
+                height: 142px
                 margin-bottom: 20px
-                @include plus1025()
-                    height: 142px
+                // @include plus700()
+                height: 142px
                 img
                     width: 100%
                     height: 100%
@@ -146,24 +145,24 @@ main
     overflow-x: hidden
     // width: 100%
 body
-    &::after, &::before
-        content: ''
-        display: inline-block
-        position: absolute
-        z-index: -1
-        width: 491px
-        height: 491px
-        border-radius: 50%
-        background-color: $decopink
-        filter: blur(120px)
-    &::after
-        right: 0
-        top: 25vh
-        transform: translateX(50%)
-    &::before
-        left: 0
-        top: calc(5vh + 491px)
-        transform: translateX(-50%)
+    // &::after, &::before
+    //     content: ''
+    //     display: inline-block
+    //     position: absolute
+    //     z-index: -1
+    //     width: 491px
+    //     height: 491px
+    //     border-radius: 50%
+    //     background-color: $decopink
+    //     filter: blur(120px)
+    // &::after
+    //     right: 0
+    //     top: 25vh
+    //     transform: translateX(50%)
+    // &::before
+    //     left: 0
+    //     top: calc(5vh + 491px)
+    //     transform: translateX(-50%)
 
 
 .aboutmain
@@ -183,14 +182,15 @@ body
     height: 100vh
     z-index: 6
     opacity: 1
+    overflow: hidden
     display: flex
     justify-content: center
     align-items: center
-    transform: translateY(101vh)
+    transform: translateX(101vh)
     transition: .2s ease-out
     &.toggled
         opacity: 1
-        transform: translateY(0)
+        transform: translateX(0)
 
     &__X
         cursor: pointer
@@ -207,32 +207,46 @@ body
             content: url(../img/modalx.svg)
 
     &__content
+
+        display: flex
+        flex-direction: column
         max-width: 540px
         width: 100%
 
     &__mainslider
+        width: calc(100% - 40px)
         height: 40vh
         margin-bottom: 20px
-        img
-            border-radius: 30px
+        @include plus700()
+            width: 100%
+        
         
     &__thumbslider
+        // width: 100%
         height: 62px
         width: 290px
         margin: 0 auto
         margin-bottom: 40px
         img
-            border-radius: 20px
             cursor: pointer
+        .productmodal__slide
+            border-radius: 20px
     &__wrapper
         height: 100%
     &__slide
         height: 100%
+        background: $bg
+        overflow: hidden
+        border-radius: 30px
         img
             height: 100%
             width: 100%
             object-fit: cover
+            object-position: center
     &__description
+        width: calc(100% - 40px)
+        @include plus700()
+            width: 100%
         p
             text-align: center
             font-family: firago
@@ -243,12 +257,14 @@ body
         z-index: 5
         top: 0
         right: 0
-        width: 100%
-        height: 100vh
         background-color: #D7EAFC
         opacity: .89
-        backdrop-filter: blur(42px)
-        transform: translateY(101vh)
+        // backdrop-filter: blur(42px)
+        transform: translateX(101vh)
+        width: 0
+        height: 0
         &.toggled
+            width: 100%
+            height: 100vh
             transform: translateX(0)
 
