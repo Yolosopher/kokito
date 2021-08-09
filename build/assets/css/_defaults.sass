@@ -1,0 +1,98 @@
+// html::-webkit-scrollbar 
+//     @include plus1025()
+//         width: 10px
+//         background-color: $bg
+
+// html::-webkit-scrollbar-thumb 
+//     @include plus1025()
+//         background-color: $orange
+
+// html::-webkit-scrollbar-track 
+//     @include plus1025()
+//         background-color: $bg
+// *:not(html):not(body)::-webkit-scrollbar 
+//     @include plus1025()
+//         width: 3px
+//         background-color: $bg
+
+// *:not(html):not(body)::-webkit-scrollbar-thumb 
+//     @include plus1025()
+//         background-color: $orange
+
+// *:not(html):not(body)::-webkit-scrollbar-track 
+//     @include plus1025()
+//         background-color: $bg
+
+
+
+*     
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    outline: none
+    resize: none
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    -webkit-tap-highlight-color: transparent
+    font-family: firago
+
+input, input:before, input:after 
+    -webkit-user-select: initial
+    -khtml-user-select: initial
+    -moz-user-select: initial
+    -ms-user-select: initial
+    user-select: initial
+     
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  
+    transition: background-color 5000s ease-in-out 0s
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+  -webkit-appearance: none
+  margin: 0
+
+html
+    scroll-behavior: smooth
+
+/* Firefox */
+input[type=number] 
+  -moz-appearance: textfield
+
+
+.container
+    padding: 0 20px
+    max-width: 1110px
+    width: 100%
+    margin: 0 auto
+
+a, button, input, textarea
+    color: inherit
+    text-decoration: none
+    border: none
+    outline: none
+    background: none
+    font-family: inherit
+    line-height: inherit
+
+
+    
+ul
+    li
+        list-style-position: inside
+        list-style: none
+    
+div.default-ul
+    p
+        &:not(:last-child)
+            margin-bottom: 1em
+            
+    ul li
+        list-style: initial
+        list-style-position: inside

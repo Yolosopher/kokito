@@ -1,0 +1,13 @@
+{
+  "name": "kokito",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pug": "pug src --out ./build --watch --pretty -O options.json",
+    "sass": "sass build/assets/css/style.sass build/assets/css/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

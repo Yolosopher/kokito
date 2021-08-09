@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+    head
+        link(rel="stylesheet", href="assets/css/swiper-bundle.min.css")
+        include ../layouts/_head
+    body
+        include ../layouts/_header
+        main
+            .main.container.homemain
+                h3.homemain__title ჩვენ ვქმნით
+                ul.homemain__list
+                    each product, index in products
+                        li.homemain__list__li(data-description=product.description)
+                            .homemain__list__li__imgbox
+                                img(src=product.images[0], alt="")
+                            h1.homemain__list__li__title=product.title
+                            .homemain__list__li__price=`${product.price} ₾`
+                            ul.homemain__list__li__images
+                                if (product.images.length > 1)
+                                    each img, i in product.images
+                                        if (i > 0)
+                                            li
+                                                img(src=img, alt="")
+                section.homemain__about
+                    .homemain__about__left
+                        h2.homemain__about__title ჩვენ შესახებ
+                        .homemain__about__textbox
+                            p ეკოლოგიურად ხის სათამაშოები დამზადებულია საქართველოში, გამოყენებულია , წყლის ბაზაზე დამზადებული საღებავები რომელიც 100% უსაფრთხოა თქვენი პატარებისთვის
+                        a.homemain__about__link(href="about.html") კითხვის გაგრძელება
+                    .homemain__about__right
+                        .homemain__about__logo
+                            img(src="assets/img/logo.png", alt="")
+        
+        include ../layouts/_footer
+        include ../components/productmodal
+
+
+        script(src="assets/js/swiper-bundle.min.js") 
+        script(src="assets/js/main.js") 

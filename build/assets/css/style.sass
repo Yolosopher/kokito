@@ -1,0 +1,254 @@
+@import _fonts
+@import _variables
+@import _defaults
+
+html
+    // overflow: hidden
+body
+    background-color: $bg
+    overflow-x: hidden
+    &.noscroll
+        overflow: hidden
+
+@import _header
+
+
+.homemain
+    &__title
+        font-family: firagosemibold
+        @include font(32px, 38.4px)
+        color: $black
+        text-align: center
+        margin-bottom: 60px
+    &__list
+        display: grid
+        grid-gap: 30px
+        width: 100%
+        margin-bottom: 40px
+        grid-auto-rows: 415px
+        @include plus700()
+            grid-auto-rows: 315px
+            grid-template-columns: repeat(3, 1fr)
+
+        @include plus1025()
+            margin-bottom: 130px
+            grid-template-columns: repeat(4, 1fr)
+        &__li
+            display: flex
+            flex-direction: column
+            padding: 20px
+            border-radius: 30px
+            background: linear-gradient(151.94deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 100.95%)
+            // width: 
+            height: 415px
+            cursor: pointer
+            @include plus700()
+                height: 315px
+            &__imgbox
+                border-radius: 30px
+                overflow: hidden
+                width: 100%
+                height: 242px
+                margin-bottom: 20px
+                @include plus1025()
+                    height: 142px
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+
+            &__title, &__price
+                margin-bottom: 16px
+                @include maxcolumn(1)
+                font-family: firagosemibold
+                color: $black
+                @include upperCase()
+                
+                @include font(18px, 22px)
+                text-align: center
+            &__price
+                margin-bottom: 30px
+
+            &__images
+                width: 100%
+                display: grid
+                grid-template-columns: repeat(3, 1fr)
+                grid-gap: 10px
+                align-items: center
+                li
+                    display: flex
+                    height: 62px
+                    border-radius: 20px
+                    overflow: hidden
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+
+
+    &__about
+        display: grid
+        grid-gap: 30px
+        margin-bottom: 50px
+        // height: 286px
+        @include plus1025()
+            height: 286px
+            grid-gap: 0
+            grid-template-columns: 1fr 1fr
+        &__left
+            height: 100%
+            display: flex
+            flex-direction: column
+            order: 1
+            justify-content: space-between
+            @include plus1025()
+                order: 0
+                padding-right: 125px
+        &__title
+            font-family: firagosemibold
+            @include font(32px, 38.4px)
+            color: $black
+            margin-bottom: 16px
+            @include plus1025()
+                margin-bottom: 0
+        &__link
+            font-family: firagosemibold
+            @include font(16px, 22.4px)
+            color: $black
+            border-radius: 30px
+            background-color: #FFFDD4
+            padding: 17px 34px
+            width: max-content
+        &__textbox
+            margin-bottom: 16px
+            @include plus1025()
+                margin-bottom: 0
+            p
+                font-family: firago
+                @include font(16px, 22.4px)
+                color: $blue
+        &__right
+            border-radius: 30px
+            background-color: #B2E3FF
+            display: flex
+            justify-content: center
+            align-items: center
+            height: 286px
+        &__logo
+            width: 185px
+            height: 130px
+            img
+                width: 100%
+                height: 100%
+                object-fit: contain
+
+main
+    overflow-x: hidden
+    // width: 100%
+body
+    &::after, &::before
+        content: ''
+        display: inline-block
+        position: absolute
+        z-index: -1
+        width: 491px
+        height: 491px
+        border-radius: 50%
+        background-color: $decopink
+        filter: blur(120px)
+    &::after
+        right: 0
+        top: 25vh
+        transform: translateX(50%)
+    &::before
+        left: 0
+        top: calc(5vh + 491px)
+        transform: translateX(-50%)
+
+
+.aboutmain
+    &__section
+        @include plus1025()
+            max-width: 730px
+            margin: 0 auto
+
+        p
+            text-align: center
+
+.productmodal
+    position: fixed
+    top: 0
+    right: 0
+    width: 100%
+    height: 100vh
+    z-index: 6
+    opacity: 1
+    display: flex
+    justify-content: center
+    align-items: center
+    transform: translateY(101vh)
+    transition: .2s ease-out
+    &.toggled
+        opacity: 1
+        transform: translateY(0)
+
+    &__X
+        cursor: pointer
+        height: 24px
+        width: 24px
+        position: absolute
+        top: 10px
+        right: 10px
+        @include plus1025()
+            top: 70px
+            right: 70px
+        &::after
+            height: 24px
+            content: url(../img/modalx.svg)
+
+    &__content
+        max-width: 540px
+        width: 100%
+
+    &__mainslider
+        height: 40vh
+        margin-bottom: 20px
+        img
+            border-radius: 30px
+        
+    &__thumbslider
+        height: 62px
+        width: 290px
+        margin: 0 auto
+        margin-bottom: 40px
+        img
+            border-radius: 20px
+            cursor: pointer
+    &__wrapper
+        height: 100%
+    &__slide
+        height: 100%
+        img
+            height: 100%
+            width: 100%
+            object-fit: cover
+    &__description
+        p
+            text-align: center
+            font-family: firago
+            @include font(16px, 22.4px)
+            color: $black
+    &__bg
+        position: fixed
+        z-index: 5
+        top: 0
+        right: 0
+        width: 100%
+        height: 100vh
+        background-color: #D7EAFC
+        opacity: .89
+        backdrop-filter: blur(42px)
+        transform: translateY(101vh)
+        &.toggled
+            transform: translateX(0)
+
